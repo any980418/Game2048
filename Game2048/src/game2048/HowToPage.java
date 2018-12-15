@@ -74,11 +74,11 @@ public class HowToPage extends JPanel {
 		btnPrev = new JButton(new ImageIcon("Image/arrowPrev.png"));
 		btnPrev.setPressedIcon(new ImageIcon("Image/clickedPrev.png"));
 		btnPrev.setBounds(45, 16, 53, 53);
-		btnPrev.addActionListener(btnL);//버튼이 눌렸을때 이벤트 처리를 위한 버튼리스너를 추가
+		btnPrev.addActionListener(btnL);	//버튼이 눌렸을때 이벤트 처리를 위한 리스너를 추가
 		btnPrev.setContentAreaFilled(false);
 		btnPrev.setBorderPainted(false);
 		btnPrev.setFocusPainted(false);
-		btnPrev.setEnabled(false);//처음 1페이지에서는 사용 못하게한다
+		btnPrev.setEnabled(false);			//처음 1페이지에서는 사용 못하게한다
 		add(btnPrev);
 		
 		btnNext = new JButton(new ImageIcon("Image/arrowNext.png"));
@@ -94,67 +94,74 @@ public class HowToPage extends JPanel {
 		
 		//게임 장면/////////////////////////////////////////////////////////////
 		
+		/* 이미지 생성  */
+		image1 = new ImageIcon("Image/page1.PNG");	//패널에 넣어줄 이미지 아이콘 생성
+		Image change1 = image1.getImage();			//이미지 사이즈를 맞추기 위해 기본 이미지를 선언후 받아옴
+		Image changed1 = change1.getScaledInstance(460, 400,java.awt.Image.SCALE_SMOOTH); //패널 크기에 맞는 사이즈로 변환 시킨 이미지 작업
+		nimage1= new ImageIcon(changed1);			//변환한 이미지를 새로운 아이콘에 생성
+		
+		image2 = new ImageIcon("Image/move1.PNG");
+		Image change2 = image2.getImage();
+		Image changed2 = change2.getScaledInstance(460, 400,java.awt.Image.SCALE_SMOOTH);
+		nimage2= new ImageIcon(changed2);
+		
+		image3 = new ImageIcon("Image/move2.PNG");
+		Image change3 = image3.getImage();
+		Image changed3 = change3.getScaledInstance(460, 400,java.awt.Image.SCALE_SMOOTH);
+		nimage3= new ImageIcon(changed3);
+		
+		image4 = new ImageIcon("Image/move3.PNG");
+		Image change4 = image4.getImage();
+		Image changed4 = change4.getScaledInstance(460, 400,java.awt.Image.SCALE_SMOOTH);
+		nimage4 = new ImageIcon(changed4);
+		
+		image5 = new ImageIcon("Image/useSkill.PNG");
+		Image change5 = image5.getImage();
+		Image changed5 = change5.getScaledInstance(460, 400,java.awt.Image.SCALE_SMOOTH);
+		nimage5 = new ImageIcon(changed5);
+		
+		image6 = new ImageIcon("Image/gameover.PNG");
+		Image change6 = image6.getImage();
+		Image changed6 = change6.getScaledInstance(460, 400,java.awt.Image.SCALE_SMOOTH);
+		nimage6 = new ImageIcon(changed6);
+		
 		//게임의 화면 구성 설명
 		pn1 = new JPanel();
-		image1 = new ImageIcon("Image/page1.PNG");//패널에 넣어줄 이미지 아이콘 생성
-		Image change1 = image1.getImage();//이미지 사이즈를 맞추기 위해 기본 이미지를 선언후 받아옴
-		Image changed1 = change1.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);//패널 크기에 맞는 사이즈로 변환 시킨 이미지 작업
-		nimage1= new ImageIcon(changed1);//변환한 이미지를 새로운 아이콘에 생성
-		lb1 = new JLabel(nimage1);//사이즈를 맞춰 준 이미지 아이콘을 라벨에 추가
-		pn1.setVisible(true);//처음 장면이기 때문에 화면에 띄워준다
+		lb1 = new JLabel(nimage1);	//사이즈를 맞춰 준 이미지 아이콘을 라벨에 추가
+		pn1.setVisible(true);		//처음 장면이기 때문에 화면에 띄워준다.
 		pn1.add(lb1);
 		examPanel.add(pn1);
 		
-		//블록끼리 합쳐져 점수를 얻을 때,설정은 pn1과 중복
+		//블록끼리 합쳐져 점수를 얻을 때
 		pn2 = new JPanel();
-		image2 = new ImageIcon("Image/move1.PNG");
-		Image change2 = image2.getImage();
-		Image changed2 = change2.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
-		nimage2= new ImageIcon(changed2);
 		lb2 = new JLabel(nimage2);
 		pn2.setVisible(false);
 		pn2.add(lb2);
 		examPanel.add(pn2);
 		
-		//몬스터를 무찌르고 스킬포인트를 올리는 장면 패널,설정은 pn1과 중복
+		//몬스터를 무찌르고 스킬포인트를 올리는 장면 패널
 		pn3 = new JPanel();
-		image3 = new ImageIcon("Image/move2.PNG");
-		Image change3 = image3.getImage();
-		Image changed3 = change3.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
-		nimage3= new ImageIcon(changed3);
 		lb3 = new JLabel(nimage3);
 		pn3.setVisible(false);
 		pn3.add(lb3);
 		examPanel.add(pn3);
 		
-		//숫자블록이 몬스터에 가로 막히는 장면패널,설정은 pn1과 중복
+		//숫자블록이 몬스터에 가로 막히는 장면패널
 		pn4 = new JPanel();
-		image4 = new ImageIcon("Image/move3.PNG");
-		Image change4 = image4.getImage();
-		Image changed4 = change4.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
-		nimage4 = new ImageIcon(changed4);
 		lb4 = new JLabel(nimage4);
 		pn4.setVisible(false);
 		pn4.add(lb4);
 		examPanel.add(pn4);
 		
-		//스킬사용 장면 패널,설정은 pn1과 중복
+		//스킬사용 장면 패널
 		pn5 = new JPanel();
-		image5 = new ImageIcon("Image/useSkill.PNG");
-		Image change5 = image5.getImage();
-		Image changed5 = change5.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
-		nimage5 = new ImageIcon(changed5);
 		lb5 = new JLabel(nimage5);
 		pn5.setVisible(false);
 		pn5.add(lb5);
 		examPanel.add(pn5);
 		
-		//게임오버 장면 패널,설정은 pn1과 중복
+		//게임오버 장면 패널
 		pn6 = new JPanel();
-		image6 = new ImageIcon("Image/gameover.PNG");
-		Image change6 = image6.getImage();
-		Image changed6 = change6.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
-		nimage6 = new ImageIcon(changed6);
 		lb6 = new JLabel(nimage6);
 		pn6.setVisible(false);
 		pn6.add(lb6);
@@ -162,33 +169,37 @@ public class HowToPage extends JPanel {
 		
 		//게임 설명//////////////////////////////////////////////////////////////////////
 		
-		//화면 구성 설명
-		e1 = new JPanel();
+		/* 설명할 글을 이미지로 받아 생성 */
 		eImage1 = new ImageIcon("Image/explain1.png");
-		elb1 = new JLabel(eImage1);
-		e1.setVisible(true);
-		e1.add(elb1);
+		eImage2 = new ImageIcon("Image/explain2.png");
+		eImage3 = new ImageIcon("Image/explain3.png");
+		eImage4 = new ImageIcon("Image/explain4.png");
+		eImage5 = new ImageIcon("Image/explain5.png");
+		eImage6 = new ImageIcon("Image/explain6.png");
+		
+		//화면 구성 설명
+		e1 = new JPanel();			//패널 생성 
+		elb1 = new JLabel(eImage1);	//이미지 아이콘을 라벨에 추가
+		e1.setVisible(true);		//처음에만 보이게 설정
+		e1.add(elb1);				//패널에 설명 이미지를 추가 
 		explainPanel.add(e1);
 		
 		//블록 이동시 같은 숫자끼리의 충돌 효과 설명
 		e2 = new JPanel();
-		eImage2 = new ImageIcon("Image/explain2.png");
 		elb2 = new JLabel(eImage2);
-		e2.setVisible(false);
+		e2.setVisible(false);		//처음에는 보이지 않게 설정
 		e2.add(elb2);
 		explainPanel.add(e2);
 		
 		//몬스터와 캐릭터의 충돌 효과 설명
 		e3 = new JPanel();
-		eImage3 = new ImageIcon("Image/explain3.png");
 		elb3 = new JLabel(eImage3);
 		e3.setVisible(false);
 		e3.add(elb3);
 		explainPanel.add(e3);
 		
 		//몬스터와 숫자블록의 충돌 설명
-		e4 = new JPanel();//
-		eImage4 = new ImageIcon("Image/explain4.png");
+		e4 = new JPanel();
 		elb4 = new JLabel(eImage4);
 		e4.setVisible(false);
 		e4.add(elb4);
@@ -196,15 +207,13 @@ public class HowToPage extends JPanel {
 		
 		//스킬사용설명
 		e5 = new JPanel();
-		eImage5 = new ImageIcon("Image/explain5.png");
 		elb5 = new JLabel(eImage5);
 		e5.setVisible(false);
 		e5.add(elb5);
 		explainPanel.add(e5);
 		
-		//게임오버 설명,처음에는 안보인다
+		//게임오버 설명
 		e6 = new JPanel();
-		eImage6 = new ImageIcon("Image/explain6.png");
 		elb6 = new JLabel(eImage6);
 		e6.setVisible(false);
 		e6.add(elb6);
@@ -222,19 +231,20 @@ public class HowToPage extends JPanel {
 		
 	} //paintComponent()
 	
+	//페이지 넘기기
 	//버튼 이벤트가 발생했을 때 처리를 해주는 리스너 클래스
 	private class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			
 			Object obj = e.getSource();//오브젝트로 액션의 대상을 가져옴
 			
-			if(obj == btnPrev) {//만얃 이전 버튼일 때
+			if(obj == btnPrev) {//이전 버튼일 때
 				if(pn1.isVisible() == true) {//설명1일때 
 					pn6.setVisible(false);
 					e6.setVisible(false);
 				}
 				else if(pn2.isVisible() == true) {//설명2일때(이전버튼이 눌리면서 설명1을 가시화)
-					btnPrev.setEnabled(false);//처음 으로 돌아가도 이전 버튼이 안 눌지게 하기 위한 작업
+					btnPrev.setEnabled(false);//처음 으로 돌아가도 이전 버튼이 안 눌러지게 하기 위한 작업
 					pn1.setVisible(true);
 					pn2.setVisible(false);
 					pn6.setVisible(false);
@@ -327,7 +337,7 @@ public class HowToPage extends JPanel {
 		
 	} //ButtonListener()
 	
-	//나가기 버튼을 눌렀을 때, 화면 이동을 위해
+	//나가기 버튼을 눌렀을 때  화면 이동을 위해
 	//PageController에서 listener를 전달받아 버튼에 add
 	public void addPageChangeListener(ActionListener listener) {
 		btnExit.addActionListener(listener);

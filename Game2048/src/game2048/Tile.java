@@ -63,16 +63,17 @@ public class Tile {
 		int i = (int)(Math.random() * 10) + 1; // 1 ~ 10
 		ImageIcon icon;
 				
-		if (1 <= i  && i <= 7) { // 70프로 확률, 스킬포인트 1 몬스터
+		if (1 <= i  && i <= 7) { 		// 70프로 확률, 스킬포인트 1 몬스터
 			icon = new ImageIcon("" + TileValue.Path[0]);
 			skillPnt = 1;
-		} else if (8 <= i  && i <= 9) { // 20프로 확률, 스킬포인트 2 몬스터
+		} else if (8 <= i  && i <= 9) {	// 20프로 확률, 스킬포인트 2 몬스터
 			icon = new ImageIcon("" + TileValue.Path[1]);
 			skillPnt = 2;
-		} else { // 10프로 확률, 스킬포인트 3 몬스터
+		} else {						// 10프로 확률, 스킬포인트 3 몬스터
 			icon = new ImageIcon("" + TileValue.Path[2]);
 			skillPnt = 3;
 		}
+		
 		img = icon.getImage();
 	} //setImg()
 	

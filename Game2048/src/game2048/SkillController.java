@@ -43,9 +43,11 @@ public class SkillController {
 		defaultCursor = tk.createCustomCursor(imgDefaultCursor, pt, "defaultCursor");
 		skillCursor = tk.createCustomCursor(imgSkillCursor, pt, "skillCursor");
 		
+		//커서 적용
 		view.setCursor(defaultCursor);
 	} //DefinedCursor()
 	
+	//커서를 변경하여 적용
 	public void changeCursor(boolean flag) {
 		if(flag)	view.setCursor(skillCursor);
 		else 		view.setCursor(defaultCursor);
@@ -102,9 +104,8 @@ public class SkillController {
 		public void mouseExited(MouseEvent event) {}
 		public void mouseDragged(MouseEvent event) {}
 		public void mouseMoved(MouseEvent event) {
-			// 마우스가 움직일때 현재 선택한 스킬이 있다면
-			if (view.gamePage.nSkill != 0)
-				view.gamePage.previewSkill(event); // 스킬 발동 예상 지점을 화면에 보여줌
-		}		
+			if (view.gamePage.nSkill != 0)			// 마우스가 움직일때 현재 선택한 스킬이 있다면
+				view.gamePage.previewSkill(event);	// 스킬 발동 예상 지점을 화면에 보여줌
+		}
 	} //SkillMouseListener class
 } //SkillController class
