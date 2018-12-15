@@ -95,15 +95,15 @@ public class HowToPage extends JPanel {
 		//게임 장면/////////////////////////////////////////////////////////////
 		
 		//게임의 화면 구성 설명
-		pn1 = new JPanel();//게임 시연 화면 이미지를 위한 패널 
+		pn1 = new JPanel();
 		image1 = new ImageIcon("Image/page1.PNG");//패널에 넣어줄 이미지 아이콘 생성
 		Image change1 = image1.getImage();//이미지 사이즈를 맞추기 위해 기본 이미지를 선언후 받아옴
 		Image changed1 = change1.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);//패널 크기에 맞는 사이즈로 변환 시킨 이미지 작업
 		nimage1= new ImageIcon(changed1);//변환한 이미지를 새로운 아이콘에 생성
 		lb1 = new JLabel(nimage1);//사이즈를 맞춰 준 이미지 아이콘을 라벨에 추가
-		pn1.add(lb1);//라벨을 패널에 추가
 		pn1.setVisible(true);//처음 장면이기 때문에 화면에 띄워준다
-		examPanel.add(pn1);//전체 게임 설명 패널에 넣어준다
+		pn1.add(lb1);
+		examPanel.add(pn1);
 		
 		//블록끼리 합쳐져 점수를 얻을 때,설정은 pn1과 중복
 		pn2 = new JPanel();
@@ -112,8 +112,8 @@ public class HowToPage extends JPanel {
 		Image changed2 = change2.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
 		nimage2= new ImageIcon(changed2);
 		lb2 = new JLabel(nimage2);
-		pn2.add(lb2);
 		pn2.setVisible(false);
+		pn2.add(lb2);
 		examPanel.add(pn2);
 		
 		//몬스터를 무찌르고 스킬포인트를 올리는 장면 패널,설정은 pn1과 중복
@@ -123,8 +123,8 @@ public class HowToPage extends JPanel {
 		Image changed3 = change3.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
 		nimage3= new ImageIcon(changed3);
 		lb3 = new JLabel(nimage3);
-		pn3.add(lb3);
 		pn3.setVisible(false);
+		pn3.add(lb3);
 		examPanel.add(pn3);
 		
 		//숫자블록이 몬스터에 가로 막히는 장면패널,설정은 pn1과 중복
@@ -134,8 +134,8 @@ public class HowToPage extends JPanel {
 		Image changed4 = change4.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
 		nimage4 = new ImageIcon(changed4);
 		lb4 = new JLabel(nimage4);
-		pn4.add(lb4);
 		pn4.setVisible(false);
+		pn4.add(lb4);
 		examPanel.add(pn4);
 		
 		//스킬사용 장면 패널,설정은 pn1과 중복
@@ -145,8 +145,8 @@ public class HowToPage extends JPanel {
 		Image changed5 = change5.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
 		nimage5 = new ImageIcon(changed5);
 		lb5 = new JLabel(nimage5);
-		pn5.add(lb5);
 		pn5.setVisible(false);
+		pn5.add(lb5);
 		examPanel.add(pn5);
 		
 		//게임오버 장면 패널,설정은 pn1과 중복
@@ -156,59 +156,59 @@ public class HowToPage extends JPanel {
 		Image changed6 = change6.getScaledInstance( 460, 400,java.awt.Image.SCALE_SMOOTH);
 		nimage6 = new ImageIcon(changed6);
 		lb6 = new JLabel(nimage6);
-		pn6.add(lb6);
 		pn6.setVisible(false);
+		pn6.add(lb6);
 		examPanel.add(pn6);
 		
 		//게임 설명//////////////////////////////////////////////////////////////////////
 		
 		//화면 구성 설명
-		e1 = new JPanel();//각각의 게임시연을 설명하기 위한 패널 생성
-		eImage1 = new ImageIcon("Image/explain1.png");//설명할 글을 이미지로 받아 생성
-		elb1 = new JLabel(eImage1);//이미지 아이콘을 라벨에 추가
-		e1.add(elb1);//설명을 위한 패널에 이미지를 추가
-		e1.setVisible(true);//처음만 보이게 해 놓은다 
-		explainPanel.add(e1);//게임 설명 패널에 설명들을 넣는다
+		e1 = new JPanel();
+		eImage1 = new ImageIcon("Image/explain1.png");
+		elb1 = new JLabel(eImage1);
+		e1.setVisible(true);
+		e1.add(elb1);
+		explainPanel.add(e1);
 		
-		//블록 이동시 같은 숫자끼리의 충돌 효과 설명,처음에는 안보인다
+		//블록 이동시 같은 숫자끼리의 충돌 효과 설명
 		e2 = new JPanel();
-		eImage2 = new ImageIcon("Image/explain2.png");//설명 2이미지
+		eImage2 = new ImageIcon("Image/explain2.png");
 		elb2 = new JLabel(eImage2);
-		e2.add(elb2);
 		e2.setVisible(false);
+		e2.add(elb2);
 		explainPanel.add(e2);
 		
-		//몬스터와 캐릭터의 충돌 효과 설명,처음에는 안보인다
+		//몬스터와 캐릭터의 충돌 효과 설명
 		e3 = new JPanel();
-		eImage3 = new ImageIcon("Image/explain3.png");//설명3이미지
+		eImage3 = new ImageIcon("Image/explain3.png");
 		elb3 = new JLabel(eImage3);
-		e3.add(elb3);
 		e3.setVisible(false);
+		e3.add(elb3);
 		explainPanel.add(e3);
 		
-		//몬스터와 숫자블록의 충돌 설명,처음에는 안보인다
+		//몬스터와 숫자블록의 충돌 설명
 		e4 = new JPanel();//
-		eImage4 = new ImageIcon("Image/explain4.png");//설명 4이미지
+		eImage4 = new ImageIcon("Image/explain4.png");
 		elb4 = new JLabel(eImage4);
-		e4.add(elb4);
 		e4.setVisible(false);
+		e4.add(elb4);
 		explainPanel.add(e4);
 		
-		//스킬사용설명,처음에는 안보인다
-		e5 = new JPanel();//각각의 게임시연을 설명하기 위한 패널 생성
-		eImage5 = new ImageIcon("Image/explain5.png");//설명할 글을 이미지로 받아 생성
-		elb5 = new JLabel(eImage5);//이미지 아이콘을 라벨에 추가
-		e5.add(elb5);//설명을 위한 패널에 이미지를 추가
-		e5.setVisible(false);//처음 설명만 보이게 해 놓는다
-		explainPanel.add(e5);//게임 설명 패널에 설명들을 넣는다
+		//스킬사용설명
+		e5 = new JPanel();
+		eImage5 = new ImageIcon("Image/explain5.png");
+		elb5 = new JLabel(eImage5);
+		e5.setVisible(false);
+		e5.add(elb5);
+		explainPanel.add(e5);
 		
 		//게임오버 설명,처음에는 안보인다
-		e6 = new JPanel();//각각의 게임시연을 설명하기 위한 패널 생성
+		e6 = new JPanel();
 		eImage6 = new ImageIcon("Image/explain6.png");
-		elb6 = new JLabel(eImage6);//이미지 아이콘을 라벨에 추가
-		e6.add(elb6);//설명을 위한 패널에 이미지를 추가
-		e6.setVisible(false);//처음 설명만 보이게 해 놓는다
-		explainPanel.add(e6);//게임 설명 패널에 설명들을 넣는다
+		elb6 = new JLabel(eImage6);
+		e6.setVisible(false);
+		e6.add(elb6);
+		explainPanel.add(e6);
 		
 	} //HowToPlayPanel()
 	
