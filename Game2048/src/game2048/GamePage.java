@@ -99,7 +99,8 @@ public class GamePage extends JPanel implements Runnable {
 		bMovingNow = false;
 		bShowSkill = false;
 
-		// 팝업 창 생성 후 setVisible을 false해준다.
+		//팝업 창
+		//생성 후 setVisible을 false 해준다.
 		reset = new Popup("reset");
 		reset.setBounds(125,310,300,130);
 		reset.setVisible(false);
@@ -123,6 +124,7 @@ public class GamePage extends JPanel implements Runnable {
 		 setFocusPainted(false);		//선택될 때 글씨 테두리 없앰
 		*/
 		
+		/* 옵션 버튼 */
 		btnReset = new JButton(new ImageIcon("Image/resetButton.png"));
 		btnReset.setPressedIcon(new ImageIcon("Image/pressedReset.png"));
 		btnReset.setBounds(390,20,60,60);
@@ -192,6 +194,8 @@ public class GamePage extends JPanel implements Runnable {
 		lblSkill4.setHorizontalAlignment(SwingConstants.CENTER);
 		add(lblSkill4);
 		
+		/* 스킬버튼 */
+		//한칸
 		btnSkill1 = new JButton(new ImageIcon("Image/skillButton1.png"));
 		btnSkill1.setPressedIcon(new ImageIcon("Image/clickedSkill1.png"));
 		btnSkill1.setBounds(20,642,78,78);
@@ -224,6 +228,7 @@ public class GamePage extends JPanel implements Runnable {
 		btnSkill3.setHorizontalAlignment(SwingConstants.CENTER);
 		add(btnSkill3);
 		
+		//십자
 		btnSkill4 = new JButton(new ImageIcon("Image/skillButton4.png"));
 		btnSkill4.setPressedIcon(new ImageIcon("Image/clickedSkill4.png"));
 		btnSkill4.setBounds(290,642,78,78);
@@ -234,6 +239,7 @@ public class GamePage extends JPanel implements Runnable {
 		btnSkill4.setHorizontalAlignment(SwingConstants.CENTER);
 		add(btnSkill4);
 		
+		/* 방향키 버튼 */
 		btnLeft = new JButton(new ImageIcon("Image/left.png"));
 		btnLeft.setPressedIcon(new ImageIcon("Image/pressedL.png"));
 		btnLeft.setBounds(383,690,48,48);
